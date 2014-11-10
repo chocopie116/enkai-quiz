@@ -1,0 +1,107 @@
+<!DOCTYPE html>
+<html lang="ja">
+    <head>
+        <meta name="viewport" content="width=device-width, initial-scale=1">
+        <script src="https://code.jquery.com/jquery-2.1.1.js"></script>
+        <script src="http://code.createjs.com/createjs-2013.12.12.min.js"></script>
+        <link rel="stylesheet" href="/css/ranking.css">
+        <title>早押しワースト10</title>
+    </head>
+    <body>
+        <div id="winners" style="display:none" data-count=<%- @ranking.length %>></div>
+        <% for record in @ranking: %>
+        <div id="rank-data-<%- record.rank %>" style="display:none" data-rank="<%- record.rank %>位" data-name="<%- record.name %>" data-seconds="<%- record.seconds %>秒"></div>
+        <% end %>
+        <div id="questionId" data-questionId="<%= @questionId %>"></div>
+
+
+        <div class="container">
+            <p id="title_img"><img  src="/img/ranking/worst.png" height="60%"></p>
+
+            <table class="ranking">
+                <tr class="rank-1">
+                    <td class="rank"><div class="text hidden"></div></td>
+                    <td class="name"><div class="text hidden"></div></td>
+                    <td class="time"><div class="text hidden"></div></td>
+                </tr>
+                <tr class="rank-2">
+                    <td class="rank"><div class="text hidden"></div></td>
+                    <td class="name"><div class="text hidden"></div></td>
+                    <td class="time"><div class="text hidden"></div></td>
+                </tr>
+                <tr class="rank-3">
+                    <td class="rank"><div class="text hidden"></div></td>
+                    <td class="name"><div class="text hidden"></div></td>
+                    <td class="time"><div class="text hidden"></div></td>
+                </tr>
+                <tr class="rank-4">
+                    <td class="rank"><div class="text hidden"></div></td>
+                    <td class="name"><div class="text hidden"></div></td>
+                    <td class="time"><div class="text hidden"></div></td>
+                </tr>
+                <tr class="rank-5">
+                    <td class="rank"><div class="text hidden"></div></td>
+                    <td class="name"><div class="text hidden"></div></td>
+                    <td class="time"><div class="text hidden"></div></td>
+                </tr>
+                <tr class="rank-6">
+                    <td class="rank"><div class="text hidden"></div></td>
+                    <td class="name"><div class="text hidden"></div></td>
+                    <td class="time"><div class="text hidden"></div></td>
+                </tr>
+                <tr class="rank-7">
+                    <td class="rank"><div class="text hidden"></div></td>
+                    <td class="name"><div class="text hidden"></div></td>
+                    <td class="time"><div class="text hidden"></div></td>
+                </tr>
+                <tr class="rank-8">
+                    <td class="rank"><div class="text hidden"></div></td>
+                    <td class="name"><div class="text hidden"></div></td>
+                    <td class="time"><div class="text hidden"></div></td>
+                </tr>
+                <tr class="rank-9">
+                    <td class="rank"><div class="text hidden"></div></td>
+                    <td class="name"><div class="text hidden"></div></td>
+                    <td class="time"><div class="text hidden"></div></td>
+                </tr>
+                <tr class="rank-10">
+                    <td class="rank"><div class="text hidden"></div></td>
+                    <td class="name"><div class="text hidden"></div></td>
+                    <td class="time"><div class="text hidden"></div></td>
+                </tr>
+            </table>
+
+        </div>
+        <script>
+            var winnerCount = $('#winners').data().count,
+            clickCount = 0,
+            boobySoundsTime = 1000,
+            startDelay = 1000,
+            addonDelay = (boobySoundsTime - startDelay)/winnerCount;
+
+            document.addEventListener('click', function() {
+                clickCount++;
+
+                if (clickCount == 1) {
+                    for (var i = 1; i < winnerCount; i++) {
+                        var data = $('#rank-data-'+i).data()
+
+                        var rank = $('.rank-'+i);
+                        rank.find('.rank').find('.text').append(data.rank);
+                        rank.find('.name').find('.text').append(data.name);
+                        rank.find('.time').find('.text').append(data.seconds);
+                        rank.find('.text').delay(startDelay + addonDelay * i).show(1000);
+                    }
+
+                    var data = $('#rank-data-'+winnerCount).data()
+                    var rank = $('.rank-'+winnerCount);
+                    rank.find('.rank').find('.text').append(data.rank);
+                    rank.find('.name').find('.text').append(data.name);
+                    rank.find('.time').find('.text').append(data.seconds);
+                    rank.find('.text').delay(boobySoundsTime).show(1700);
+                }
+            });
+
+        </script>
+    </body>
+</html>

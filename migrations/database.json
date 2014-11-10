@@ -1,0 +1,16 @@
+{
+    "dev": {
+        "driver": "mysql",
+        "user": "dbuser",
+        "password": "dbpass",
+        "host": "localhost",
+        "database": "dbname"
+    },
+    "prod": {
+        "driver": "mysql",
+        "user": {"ENV" : "DB_USER"},
+        "password": {"ENV" : "DB_PASS"},
+        "host": {"ENV" : "DB_HOST"},
+        "database": {"ENV" : "DB_NAME"}
+    }
+}

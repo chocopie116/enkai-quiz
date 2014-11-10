@@ -1,0 +1,21 @@
+<!DOCTYPE html>
+<html lang="ja">
+    <head>
+        <meta name="viewport" content="width=device-width, initial-scale=1">
+        <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.2.0/css/bootstrap.min.css">
+        <script src="https://code.jquery.com/jquery-1.11.0.min.js"></script>
+        <title>TOP</title>
+    </head>
+    <body>
+        <div class="container">
+            <h1>enkai-quiz</h1><br><br>
+
+            <% if (!@sid): %>
+            <a href="/user/signup"><button type="submit" class="btn-block btn-lg btn-primary">ユーザー登録に進む</button></a><br>
+            <% else: %>
+            <a href="/question/answer"><button type="submit" class="btn-block btn-lg btn-success">回答画面に進む</button></a><br>
+            <% end %>
+
+        </div>
+    </body>
+</head>

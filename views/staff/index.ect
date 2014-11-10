@@ -1,0 +1,45 @@
+<!DOCTYPE html>
+<html lang="ja">
+    <head>
+        <meta name="viewport" content="width=device-width, initial-scale=1">
+        <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.2.0/css/bootstrap.min.css">
+        <title>クイズ問題の管理画面</title>
+    </head>
+    <body>
+        <div class="container">
+            <h1>クイズ問題の管理画面</h1>
+            <p>クイズ問題の編集・公開設定を行います。</p>
+
+            <a href="/staff/question/ranking"><button type="button" class="btn btn-danger">ユーザーランキング(全問題終了後に仕様)</button></a>
+
+            <table class="table">
+                <thead>
+                    <tr>
+                        <th>番号</th>
+                        <th>問題文</th>
+                        <th>開始時刻</th>
+                        <th>操作</th>
+                    </tr>
+                </thead>
+                <tbody>
+                    <% for question in @questions: %>
+                    <tr>
+                        <td><%- question.start_number %></td>
+                        <td><%- question.question %></td>
+                        <td><%- question.start_date %></td>
+                        <td>
+                            <% if question.start_date : %>
+                            <button type="button" class="btn">公開済</button>
+                            <a href="/staff/question/<%- question.question_id %>/answer"><button type="button" class="btn btn-primary">回答結果</button></a>
+                            <a href="/staff/question/<%- question.question_id %>/penalty"><button type="button" class="btn btn-danger">ペナルティ</button></a>
+                            <% else: %>
+                            <a href="/staff/question/<%- question.question_id %>/open"><button type="button" class="btn btn-warning">公開する</button></a>
+                            <% end %>
+                        </td>
+                    </tr>
+                    <% end %>
+                </tbody>
+            </table>
+        </div>
+    </body>
+</head>

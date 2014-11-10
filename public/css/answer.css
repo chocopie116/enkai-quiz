@@ -1,0 +1,32 @@
+body {
+    color: white;
+    background-color: black;
+}
+
+.container {
+    text-align: center;
+    margin-top: 0px;
+}
+
+#answer_background {
+    zoom: 150%;
+}
+
+p {
+    font-size: 30px;
+    height: 50px;
+    width: 120px;
+    background-color: blue;
+    position:absolute;
+}
+
+#text-pattern p{ left: 830px; }
+#text-pattern #answer-1 { top: 350px; }
+#text-pattern #answer-2 { top: 425px; }
+#text-pattern #answer-3 { top: 500px; }
+#text-pattern #answer-4 { top: 575px; }
+
+#image-pattern #answer-1 { top: 200px; left: 480px; }
+#image-pattern #answer-2 { top: 200px; left: 940px; }
+#image-pattern #answer-3 { top: 470px; left: 480px; }
+#image-pattern #answer-4 { top: 470px; left: 940px; }

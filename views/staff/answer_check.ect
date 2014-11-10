@@ -1,0 +1,52 @@
+<!DOCTYPE html>
+<html lang="ja">
+    <head>
+        <meta name="viewport" content="width=device-width, initial-scale=1">
+        <script src="https://code.jquery.com/jquery-1.11.0.min.js"></script>
+        <link rel="stylesheet" href="/css/answer.css">
+        <script src="/js/bgm.js"></script>
+        <title>Answer Check</title>
+    </head>
+
+    <body>
+        <div id="question" data-id="<%- @answerSheet.getQuestionStartNumber() %>"></div>
+        <div class="container">
+            <img id="answer_background" src="/img/answer_check/Q<%- @answerSheet.getQuestionStartNumber() %>.png">
+
+            <div id="<%- @answerSheet.getLayoutType() %>"> <!-- 問題毎に、text-patternか、image-patternのいずれかが入る -->
+                <p id="answer-1" style="display:none"><%- @answerSheet.countA() %></p>
+                <p id="answer-2" style="display:none"><%- @answerSheet.countB() %></p>
+                <p id="answer-3" style="display:none"><%- @answerSheet.countC() %></p>
+                <p id="answer-4" style="display:none"><%- @answerSheet.countD() %></p>
+            </div>
+        </div>
+        <div id="correct_answer" data-option="<%- @answerSheet.correct() %>"></div>
+
+        <script>
+            var clickCount = 0;
+            document.addEventListener('click', function() {
+                clickCount++;
+                //１回めのクリックで表示
+                if (clickCount == 1) {
+                    $('#answer-summary').show();
+                    $('#answer-1').show();
+                    $('#answer-2').show();
+                    $('#answer-3').show();
+                    $('#answer-4').show();
+                }
+
+                //２回めのクリックで表示
+                if (clickCount == 2) {
+                    var answer = $("#correct_answer").data().option;
+                    $("#answer-" + answer).delay(3000).css('background-color', 'red');
+                }
+
+                if (clickCount == 3) {
+                    var questionId = $("#question").data().id;
+                    var url = '/staff/question/' + questionId + '/ranking';
+                    location.href = url;
+                }
+            });
+        </script>
+    </body>
+</html>
