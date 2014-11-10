@@ -1,0 +1,7 @@
+{
+    "name": "enkai-quiz",
+        "description": "enkai-quiz for kanji-sama",
+        "repository": "https://github.com/chocopie116/enkai-quiz",
+        "keywords": ["node", "mysql", "heroku"],
+        "addons": ["cleardb:ignite"]
+}
