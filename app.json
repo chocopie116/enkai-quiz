@@ -3,5 +3,8 @@
         "description": "enkai-quiz for kanji-sama",
         "repository": "https://github.com/chocopie116/enkai-quiz",
         "keywords": ["node", "mysql", "heroku"],
+        "env": {
+            "BUILDPACK_URL": "https://github.com/mojodna/heroku-buildpack-multi.git#build-env"
+        },
         "addons": ["cleardb:ignite"]
 }
