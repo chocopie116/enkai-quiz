@@ -38,7 +38,5 @@ var countByAnswerNumber = function(results, number) {
 
 //回答結果表示画面のレイアウトを変更するため、問題ごとにpatternを持っておく
 AnswerSheet.prototype.getLayoutType = function() {
-    var pattern = 'image-pattern';
-
-    return pattern;
+    return (this.startNumber%2===1) ? "image-pattern" : "text-pattern";
 };

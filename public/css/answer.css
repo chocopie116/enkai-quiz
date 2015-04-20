@@ -1,32 +1,68 @@
-body {
-    color: white;
-    background-color: black;
-}
+*, html, body { margin:0; padding:0; }
+body { background-color: black; }
 
 .container {
-    text-align: center;
-    margin-top: 0px;
+    width:1280px;
+    height:720px;
 }
 
-#answer_background {
-    zoom: 150%;
-}
-
-p {
-    font-size: 30px;
-    height: 50px;
-    width: 120px;
-    background-color: blue;
+#answer-background {
     position:absolute;
+    top:0%;
+    left:0%;
 }
 
-#text-pattern p{ left: 830px; }
-#text-pattern #answer-1 { top: 350px; }
-#text-pattern #answer-2 { top: 425px; }
-#text-pattern #answer-3 { top: 500px; }
-#text-pattern #answer-4 { top: 575px; }
+.image-pattern div.answer-container { 
+    position:absolute; 
+    width:392px; 
+    height:220px; 
+    display:none;
+}
 
-#image-pattern #answer-1 { top: 200px; left: 480px; }
-#image-pattern #answer-2 { top: 200px; left: 940px; }
-#image-pattern #answer-3 { top: 470px; left: 480px; }
-#image-pattern #answer-4 { top: 470px; left: 940px; }
+.image-pattern div.answer-container#answer-1 { top: 28px; left: 236px; }
+.image-pattern div.answer-container#answer-2 { top: 28px; left: 779px; }
+.image-pattern div.answer-container#answer-3 { top: 287px; left: 236px; }
+.image-pattern div.answer-container#answer-4 { top: 287px; left: 779px; }
+
+.image-pattern p.answer-count-box {
+    position:absolute;
+    right:0;
+    bottom:0;
+    padding:5px 10px;
+    min-width:2em;
+
+    color:#FFFFFF;
+    font-size: 2.2em;
+    font-weight:bold;
+    text-align:right;
+    background-color: blue;
+}
+
+.text-pattern div.answer-container { 
+    position:absolute; 
+    width:120px; 
+    height:80px; 
+    display:none;
+}
+
+.text-pattern div.answer-container#answer-1 { top: 211px; left: 980px; }
+.text-pattern div.answer-container#answer-2 { top: 336px; left: 980px; }
+.text-pattern div.answer-container#answer-3 { top: 462px; left: 980px; }
+.text-pattern div.answer-container#answer-4 { top: 588px; left: 980px; }
+
+.text-pattern p.answer-count-box {
+    position:absolute;
+    top:0;
+    right:0;
+    height:60px;
+    margin:5px 0;
+    padding:5px 10px;
+    min-width:2.5em;
+
+    color:#FFFFFF;
+    font-size: 2.5em;
+    font-weight:bold;
+    text-align:right;
+    background-color: blue;
+}
+

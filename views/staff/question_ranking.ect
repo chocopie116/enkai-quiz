@@ -8,16 +8,15 @@
         <title>早押しワースト10</title>
     </head>
     <body>
+
         <div id="winners" style="display:none" data-count=<%- @ranking.length %>></div>
         <% for record in @ranking: %>
-        <div id="rank-data-<%- record.rank %>" style="display:none" data-rank="<%- record.rank %>位" data-name="<%- record.name %>" data-seconds="<%- record.seconds %>秒"></div>
+            <div id="rank-data-<%- record.rank %>" style="display:none" data-rank="<%- record.rank %>位" data-name="<%- record.name %>" data-seconds="<%- record.seconds %>秒"></div>
         <% end %>
         <div id="questionId" data-questionId="<%= @questionId %>"></div>
 
-
         <div class="container">
-            <p id="title_img"><img  src="/img/ranking/worst.png" height="60%"></p>
-
+            <div id="left-column"><img src="/img/ranking/worst.png"></div>
             <table class="ranking">
                 <tr class="rank-1">
                     <td class="rank"><div class="text hidden"></div></td>
@@ -81,7 +80,6 @@
 
             document.addEventListener('click', function() {
                 clickCount++;
-
                 if (clickCount == 1) {
                     for (var i = 1; i < winnerCount; i++) {
                         var data = $('#rank-data-'+i).data()
