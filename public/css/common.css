@@ -1,0 +1,44 @@
+* { margin: 0 auto; }
+html, body { 
+    width: 100%; 
+    height 100%; 
+    background: url('/img/bg_pattern.png');
+    color: #333;
+}
+h1 {
+    text-align: center;
+    color: #FFF;
+    font-size: 2.0em;
+    font-weight: bold;
+    text-shadow: 0 1px 0 rgba(0, 0, 0, 0.6);
+    margin: 20px 0px;
+}
+h2 {
+    text-align: center;
+    color: #FFF;
+    font-size: 1.75em;
+    font-weight: bold;
+    text-shadow: 0 1px 1.5px rgba(0, 0, 0, 0.25);
+    margin: 15px 0px;
+    padding: 15px 5px;
+    border: 2px solid #FFF;
+    box-shadow: 0 1px 1.5px rgba(0, 0, 0, 0.4);
+    border-radius: 4px;
+}
+div.container { 
+    width: 100%;
+    height: 100%;
+}
+div.actions {
+    margin: 30px 0px;
+}
+input[type='text'] {
+    height: 3.0em;
+}
+button[type='submit'] {
+    width: 100%;
+    height: 3em;
+    top: 50%;
+    font-size: 1.3em;
+    font-weight: bold;
+}
