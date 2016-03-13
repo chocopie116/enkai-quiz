@@ -1,21 +1,33 @@
 <!DOCTYPE html>
 <html lang="ja">
     <head>
-        <meta name="viewport" content="width=device-width, initial-scale=1">
+        <meta name="viewport" content="width=device-width,initial-scale=1,user-scalable=no">
         <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.2.0/css/bootstrap.min.css">
+        <link rel="stylesheet" href="/css/lumen.css">
+        <link rel="stylesheet" href="/css/common.css">
         <script src="https://code.jquery.com/jquery-1.11.0.min.js"></script>
         <title>TOP</title>
+        <style>
+            html, body, .conatiner {
+                margin:0;
+                padding:0;
+            }
+        </style>
     </head>
     <body>
         <div class="container">
-            <h1>enkai-quiz</h1><br><br>
-
-            <% if (!@sid): %>
-            <a href="/user/signup"><button type="submit" class="btn-block btn-lg btn-primary">ユーザー登録に進む</button></a><br>
-            <% else: %>
-            <a href="/question/answer"><button type="submit" class="btn-block btn-lg btn-success">回答画面に進む</button></a><br>
-            <% end %>
-
+            <div class="actions">
+                <% if (!@sid): %>
+                <a href="/user/signup">
+                    <button type="submit" class="btn-block btn-lg btn-primary">ユーザー登録に進む</button>
+                </a>
+                <% else: %>
+                <a href="/question/answer">
+                    <button type="submit" class="btn-block btn-lg btn-success">回答画面に進む</button>
+                </a>
+                <% end %>
+                <h4>LINEやFacebookアプリ等で開いている方は、SafariやChromeのアプリで開き直して下さい。</h4>
+            </div> <!-- .actions -->
         </div>
     </body>
 </head>

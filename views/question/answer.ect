@@ -1,22 +1,28 @@
 <!DOCTYPE html>
 <html lang="ja">
     <head>
-        <meta name="viewport" content="width=device-width, initial-scale=1">
+        <meta name="viewport" content="width=device-width,initial-scale=1,user-scalable=no">
         <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.2.0/css/bootstrap.min.css">
+        <link rel="stylesheet" href="/css/lumen.css">
+        <link rel="stylesheet" href="/css/common.css">
         <script src="https://code.jquery.com/jquery-1.11.0.min.js"></script>
         <title>あなたの回答を選択してください</title>
+        <style>
+        </style>
     </head>
     <body>
         <div class="container">
-            <h2>回答を選択してください。</h2>
-            <button type="submit" data-option="1" class="answer_btn btn-block btn-lg btn-primary">1</button>
-            <br>
-            <button type="submit" data-option="2" class="answer_btn btn-block btn-lg btn-success">2</button>
-            <br>
-            <button type="submit" data-option="3" class="answer_btn btn-block btn-lg btn-warning">3</button>
-            <br>
-            <button type="submit" data-option="4" class="answer_btn btn-block btn-lg btn-danger" >4</button>
-            <br>
+            <h2>回答を選択してください</h2>
+
+            <div class="actions">
+                <button type="submit" data-option="1" class="answer_btn btn-block btn-lg btn-primary">1</button>
+                <br>
+                <button type="submit" data-option="2" class="answer_btn btn-block btn-lg btn-success">2</button>
+                <br>
+                <button type="submit" data-option="3" class="answer_btn btn-block btn-lg btn-warning">3</button>
+                <br>
+                <button type="submit" data-option="4" class="answer_btn btn-block btn-lg btn-danger" >4</button>
+            </div>
             <p id="sid" style="display:none" data-sid="<%- @sid %>">session</p>
 
             <script>

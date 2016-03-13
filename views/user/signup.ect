@@ -1,31 +1,31 @@
 <!DOCTYPE html>
 <html lang="ja">
     <head>
-        <meta name="viewport" content="width=device-width, initial-scale=1">
+        <meta name="viewport" content="width=device-width,initial-scale=1,user-scalable=no">
         <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.2.0/css/bootstrap.min.css">
+        <link rel="stylesheet" href="/css/lumen.css">
+        <link rel="stylesheet" href="/css/common.css">
         <script src="https://code.jquery.com/jquery-1.11.0.min.js"></script>
         <title>Signup</title>
     </head>
     <body>
         <div class="container">
-            <h1>enkai-quiz</h1><br><br>
-            <h4>10文字以内で名前を入力してください。</h4>
-
-            <%= @error %>
-            <form name="signup" method="post" action='/user/signup' onSubmit="return checkForm()">
-                <div class="form-group">
-                    <input type="text" name='username' class="form-control" placeholder="入力例:田中 太郎" maxlength="10">
-                </div>
-                <button type="submit" class="btn btn-block btn-lg btn-primary" >ユーザー登録をする</button>
-            </form>
-            <br>
+            <h2>名前を決めてください</h2>
+            <div class="actions">
+                <%= @error %>
+                <form name="signup" method="post" action='/user/signup' onSubmit="return checkForm()">
+                    <div class="form-group">
+                        <input type="text" name='username' class="form-control" placeholder="入力例:たなかすずき (10文字以内)" maxlength="15">
+                    </div>
+                    <button type="submit" class="btn-block btn-lg btn-primary" >ユーザー登録をする</button>
+                </form>
+            </div>
             <p>※JavaScriptとCookieを無効にしている方は、有効にしてください。</p>
-                <p>※名前は順位発表で使用します。またデータは総会終了後に削除致します。</p>
+                <p>※名前は順位発表で使用します。</p>
             <script>
                 function checkForm () {
                     if (document.signup.username.value == "") {
                         alert('名前を入力してください。');
-
                         return false;
                     }
                     return true;
